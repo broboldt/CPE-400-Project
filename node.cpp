@@ -13,8 +13,12 @@
 		
 		12/01/18 -	commented out getConnectingNodes and setConnectingnodes
 					since connectingNodes is now public
+					
+		12/03/18 -	final pass before submission
+					removed commented functions that were not necessary
+					upgrade to 1.0
 	
-	Version: 0.94
+	Version: 1.0
 */
 
 #include <iostream>
@@ -29,7 +33,7 @@ using namespace std;
 // Default
 Node::Node()
 {
-	failState 			= true;	// false means the node has a failure
+	failState 			= true;			// false means the node has a failure
 	visited 			= false;
 	start 				= false;
 	end 				= false;
@@ -37,7 +41,7 @@ Node::Node()
 	numConnections 		= 0;
 	currentNodeWeight 	= 2147483647;	// highest 32-bit integer value
 	// connectingNodes does not need to be initialized
-	nodeID 					= "0";
+	nodeID 				= "0";
 }
 
 
@@ -76,16 +80,6 @@ int Node::getCurrentNodeWeight() const {
 	return currentNodeWeight;
 }
 
-
-// not necessary since connectingNodes was made public in the header for easier access
-/*
-vector <nodeConnection> Node::getConnectingNodes() const {
-	return connectingNodes;
-}
-*/
-
-
-
 string Node::getNodeID() const {
 	return nodeID;
 }
@@ -120,17 +114,6 @@ void Node::setNumConnections(int newNumConnections) {
 void Node::setCurrentNodeWeight(int newCurrentNodeWeight) {
 	currentNodeWeight = newCurrentNodeWeight;
 }
-
-
-// not necessary since connectingNodes was made public in the header for easier access
-/*
-void Node::setConnectingNodes(vector <nodeConnection> newConnectingNodes) {
-	for (int i = 0; i < newConnectingNodes.size(); i++)
-	{
-		connectingNodes.push_back( newConnectingNodes[i] );
-	}
-}
-*/
 
 
 void Node::setNodeID(string newStringID) {

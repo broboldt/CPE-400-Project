@@ -11,8 +11,13 @@
 		11/30/18 -	commented out getConnectingNodes() since the vector is now public
 		
 		12/01/18 -	Jared added ifndef/define
+		
+		12/03/18 -	final pass before submission
+					removed commented functions that were not necessary
+					added more descriptions to some private variables
+					upgrade to 1.0
 	
-	Version: 0.94
+	Version: 1.0
 */
 
 #ifndef NODE_H_
@@ -46,7 +51,6 @@ class Node
 		float getProbVal() const;
 		int getNumConnections() const;
 		int getCurrentNodeWeight() const;
-		//vector <nodeConnection> getConnectingNodes() const;	// commented out since the vector is now public
 		string getNodeID() const;
 		
 		// setters
@@ -57,21 +61,19 @@ class Node
 		void setProbVal(float);
 		void setNumConnections(int);
 		void setCurrentNodeWeight(int);
-		//void setConnectingNodes(vector <nodeConnection>);
 		void setNodeID(string);
 		
 		// variables
 		vector <nodeConnection> connectingNodes;
 
 	private:
-		bool failState;		// false means the node has a failure
+		bool failState;			// false means the node has a failure
 		bool visited;
-		bool start;			// inidcates if this specific node is the starting one
-		bool end;			// indicates if this specific node is the ending one
-		float probVal;		// probability value of the node failing
-		int numConnections;
+		bool start;				// inidcates if this specific node is the starting one
+		bool end;				// indicates if this specific node is the ending one
+		float probVal;			// probability value of the node failing
+		int numConnections;		// amount of connections that the node has
 		int currentNodeWeight;
-		//vector <nodeConnection> connectingNodes;	// moved to public
 		string nodeID;
 
 };
